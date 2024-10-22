@@ -1,0 +1,2 @@
+docker run command llama finetune.txt
+.env
