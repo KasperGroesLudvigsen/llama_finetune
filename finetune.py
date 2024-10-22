@@ -105,7 +105,6 @@ def formatting_prompts_func(examples):
     return { "text" : texts, }
 pass
 
-dataset = load_dataset("kobprof/skolegpt-instruct", split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
 ##################################
 
