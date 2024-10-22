@@ -13,4 +13,11 @@ RUN pip install unsloth && \
 
 
 COPY . .
+
+# pass MODEL_PATH like this in docker build command: docker build --build-arg MY_BUILD_ARG=my_value -t my_image . 
+ENV MODEL_PATH=${MODEL_PATH}
+ENV HF_TOKEN=${HF_TOKEN}
+
+RUN python3 download_model.py
+
 CMD ["python", "./finetune.py"]
