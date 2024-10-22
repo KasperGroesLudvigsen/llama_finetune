@@ -134,6 +134,15 @@ trainer = SFTTrainer(
     ),
 )
 
+# Log some GPU stats before we start the finetuning
+gpu_stats = torch.cuda.get_device_properties(0)
+start_gpu_memory = round(torch.cuda.max_memory_reserved() / 1024 / 1024 / 1024, 3)
+max_memory = round(gpu_stats.total_memory / 1024 / 1024 / 1024, 3)
+print(
+    f"You're using the {gpu_stats.name} GPU, which has {max_memory:.2f} GB of memory "
+    f"in total, of which {start_gpu_memory:.2f}GB has been reserved already."
+)
+
 # Run LLM fine tuning and track emissions
 tracker = EmissionsTracker()
 tracker.start()
@@ -166,3 +175,15 @@ try:
     model.save_pretrained_merged(save_in_local_folder, tokenizer, save_method="merged_16bit")
 except Exception as e:
     print(f"Could not save locally due to error: {e}")
+
+
+# Log some post-training GPU statistics
+used_memory = round(torch.cuda.max_memory_reserved() / 1024 / 1024 / 1024, 3)
+used_memory_for_lora = round(used_memory - start_gpu_memory, 3)
+used_percentage = round(used_memory / max_memory * 100, 3)
+lora_percentage = round(used_memory_for_lora / max_memory * 100, 3)
+print(
+    f"We ended up using {used_memory:.2f} GB GPU memory ({used_percentage:.2f}%), "
+    f"of which {used_memory_for_lora:.2f} GB ({lora_percentage:.2f}%) "
+    "was used for LoRa."
+)
