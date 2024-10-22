@@ -8,7 +8,7 @@ RUN pip install unsloth && \
     pip uninstall unsloth -y && \
     pip install --upgrade --no-cache-dir "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git" && \
     pip uninstall transformers -y && \
-    pip install --upgrade --no-cache-dir "git+https://github.com/huggingface/transformers.git" && \
+    pip install --upgrade --no-cache-dir "git+https://github.com/huggingface/transformers.git"
 
 
 COPY . .
