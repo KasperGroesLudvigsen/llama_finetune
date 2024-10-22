@@ -28,6 +28,6 @@ try:
     save_in_local_folder = "model"
     if not os.path.exists(save_in_local_folder):
         os.makedirs(save_in_local_folder)
-    model.save_pretrained_merged(save_in_local_folder, tokenizer, save_method="merged_16bit")
+    model.save_pretrained(save_in_local_folder, tokenizer, save_method="merged_16bit")
 except Exception as e:
     print(f"Could not save locally due to error: {e}")
