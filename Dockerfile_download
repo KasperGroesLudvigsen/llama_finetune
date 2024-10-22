@@ -2,6 +2,10 @@ FROM pytorch/pytorch:2.5.0-cuda12.1-cudnn9-runtime
 # Install git
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
+# Install necessary build tools and compilers
+RUN apt-get update && \
+    apt-get install -y build-essential gcc
+
 WORKDIR /usr/src/app
 
 RUN pip install unsloth && \
