@@ -1,35 +1,39 @@
+print("Starting fine tuning process")
 
 from unsloth import FastLanguageModel
 import torch
 import os
+from unsloth.chat_templates import get_chat_template
+from trl import SFTTrainer
+from transformers import TrainingArguments
+from unsloth import is_bfloat16_supported
+from datasets import load_dataset
+from codecarbon import EmissionsTracker
 
-token = os.environ("HF_TOKEN")
+RANDOM_SEED = 42
+
+print(f"GPU available: {torch.cuda.is_available()}")
+
+token = os.environ["HF_TOKEN"]
+
+n_samples = os.environ["N_SAMPLES"] # set to -1 if you want to use all samples
 
 # e.g. "meta-llama/Llama-3.2-1B-Instruct"
 # AI-Sweden-Models/Llama-3-8B-instruct is the llama model with the best rank
-hf_model_path = os.environ("MODEL_PATH")
+hf_model_path = os.environ["MODEL_PATH"]
+
+dataset_path = os.environ["DATASET"]
+
+# save to this HF repo, e.g. "ThatsGroes/Llama-3.2-1B-Instruct-Skolegpt"
+repo = os.environ["SAVE_TO"]
+print(f"Will push the trained model to: {repo}")
+
+print(f"Will fine tune this model: {hf_model_path}")
 
 
-
-max_seq_length = 2048 # Choose any! We auto support RoPE Scaling internally!
+max_seq_length = 8192 # If input sequence length exceeds max_seq_len it will be capped to max_seq_len Llama has context length of 8192
 dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
-load_in_4bit = True # Use 4bit quantization to reduce memory usage. Can be False.
-
-# 4bit pre quantized models we support for 4x faster downloading + no OOMs.
-fourbit_models = [
-    "unsloth/Meta-Llama-3.1-8B-bnb-4bit",      # Llama-3.1 15 trillion tokens model 2x faster!
-    "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
-    "unsloth/Meta-Llama-3.1-70B-bnb-4bit",
-    "unsloth/Meta-Llama-3.1-405B-bnb-4bit",    # We also uploaded 4bit for 405b!
-    "unsloth/Mistral-Nemo-Base-2407-bnb-4bit", # New Mistral 12b 2x faster!
-    "unsloth/Mistral-Nemo-Instruct-2407-bnb-4bit",
-    "unsloth/mistral-7b-v0.3-bnb-4bit",        # Mistral v3 2x faster!
-    "unsloth/mistral-7b-instruct-v0.3-bnb-4bit",
-    "unsloth/Phi-3.5-mini-instruct",           # Phi-3.5 2x faster!
-    "unsloth/Phi-3-medium-4k-instruct",
-    "unsloth/gemma-2-9b-bnb-4bit",
-    "unsloth/gemma-2-27b-bnb-4bit",            # Gemma 2x faster!
-] # More models at https://huggingface.co/unsloth
+load_in_4bit = False # Whether to load the model in 4bit quantization. If True, uses 4bit quantization to reduce memory usage.
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name = hf_model_path,
@@ -39,21 +43,43 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     token = token, # use one if using gated models like meta-llama/Llama-2-7b-hf
 )
 
+print("model loaded")
 
+rank = 64
 model = FastLanguageModel.get_peft_model(
     model,
-    r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+    r = rank, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128 # A lower rank means fewer parameters are being learned, leading to a more parameter-efficient method   
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",],
-    lora_alpha = 16,
+    lora_alpha = rank, # standard practice seems to be to set this to 16. Mlabonne says its usually set to 1-2x the rank
     lora_dropout = 0, # Supports any, but = 0 is optimized
     bias = "none",    # Supports any, but = "none" is optimized
     # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
     use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
     random_state = 3407,
-    use_rslora = False,  # We support rank stabilized LoRA
+    use_rslora = True,  # We support rank stabilized LoRA
     loftq_config = None, # And LoftQ
 )
+
+######### I THINK I NEED TO USE THE LLAMA CHAT TEMPLATE
+# Code adapted from: https://colab.research.google.com/drive/17zEV0325xRQvDuSiOp8E4QB5vnK6atgK#scrollTo=VuuBTFiLs1lg
+# If it does not work, replace this block with the code in dataloading_old.py
+tokenizer = get_chat_template(
+    tokenizer,
+    chat_template = "llama-3.1",
+)
+
+def formatting_prompts_func(examples):
+    convos = examples["messages"]
+    texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False) for convo in convos]
+    return { "text" : texts, }
+pass
+
+dataset = load_dataset(dataset_path, split = "train")
+
+# select subset if n_samples is larger than 0, e.g. for testing purposes
+if n_samples > 0:
+    dataset = dataset.shuffle(seed=RANDOM_SEED).select(range(n_samples))
 
 alpaca_prompt = """Nedenfor er en instruktion, der beskriver en opgave sammen med et input, der giver yderligere kontekst. Skriv et svar, der besvarer opgaven.
 
@@ -80,28 +106,23 @@ def formatting_prompts_func(examples):
     return { "text" : texts, }
 pass
 
-from datasets import load_dataset
 dataset = load_dataset("kobprof/skolegpt-instruct", split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
-
-
-from trl import SFTTrainer
-from transformers import TrainingArguments
-from unsloth import is_bfloat16_supported
+##################################
 
 trainer = SFTTrainer(
     model = model,
     tokenizer = tokenizer,
     train_dataset = dataset,
-    dataset_text_field = "text",
+    dataset_text_field = "text", # the key of the dict returned in formatting_prompts_func()
     max_seq_length = max_seq_length,
-    dataset_num_proc = 4,
+    dataset_num_proc = 4, # Number of processes to use for processing the dataset. Only used when packing = False
     packing = False, # Can make training 5x faster for short sequences.
     args = TrainingArguments(
         per_device_train_batch_size = 8,
         gradient_accumulation_steps = 1,
         warmup_steps = 5,
-        num_train_epochs = 1, # Set this for 1 full training run.
+        num_train_epochs = 1, # Set this for 1 full training run. OpenAI's default is 4 https://community.openai.com/t/how-many-epochs-for-fine-tunes/7027/5
         #max_steps = 60,
         learning_rate = 2e-4,
         fp16 = not is_bfloat16_supported(),
@@ -115,13 +136,35 @@ trainer = SFTTrainer(
     ),
 )
 
-trainer_stats = trainer.train()
-repo = "ThatsGroes/Llama-3.2-1B-Instruct-Skolegpt"
-model.push_to_hub(repo, token = token) # Online saving
-tokenizer.push_to_hub(repo, token = token) # Online saving
-if True: model.push_to_hub_merged(repo, tokenizer, save_method = "merged_16bit", token = token)
+# Run LLM fine tuning and track emissions
+tracker = EmissionsTracker()
+tracker.start()
+try:
+    trainer_stats = trainer.train()
+finally:
+    tracker.stop()
+
+# Save to huggingface
+try:
+    model.push_to_hub_merged(repo, tokenizer, save_method="merged_16bit", token = token)
+except Exception as e:
+    print(f"Could not push to hub due to error: {e}")
+
+
+#model.push_to_hub(repo, token = token) # Online saving
+#tokenizer.push_to_hub(repo, token = token) # Online saving
+#if True: model.push_to_hub_merged(repo, tokenizer, save_method = "merged_16bit", token = token)
 
 #model.save_pretrained("lora_model") # Local saving
 #tokenizer.save_pretrained("lora_model")
-model.push_to_hub("ThatsGroes/llama-test", token = token) # Online saving
-tokenizer.push_to_hub("ThatsGroes/llama-test", token = token) # Online saving
+#model.push_to_hub("ThatsGroes/llama-test", token = token) # Online saving
+#tokenizer.push_to_hub("ThatsGroes/llama-test", token = token) # Online saving
+
+try:
+    # Save locally
+    save_in_local_folder = "model"
+    if not os.path.exists(save_in_local_folder):
+        os.makedirs(save_in_local_folder)
+    model.save_pretrained_merged(save_in_local_folder, tokenizer, save_method="merged_16bit")
+except Exception as e:
+    print(f"Could not save locally due to error: {e}")
