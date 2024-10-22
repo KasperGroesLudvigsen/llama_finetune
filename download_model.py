@@ -22,3 +22,12 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = load_in_4bit,
     token = token, # use one if using gated models like meta-llama/Llama-2-7b-hf
 )
+
+try:
+    # Save locally
+    save_in_local_folder = "model"
+    if not os.path.exists(save_in_local_folder):
+        os.makedirs(save_in_local_folder)
+    model.save_pretrained_merged(save_in_local_folder, tokenizer, save_method="merged_16bit")
+except Exception as e:
+    print(f"Could not save locally due to error: {e}")

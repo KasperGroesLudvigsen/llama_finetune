@@ -1,5 +1,11 @@
 # llama_finetune
 
+# Save model to server
+1. Write python script that saves model
+2. Write docker file to build container
+3. Build image
+4. Run container
+
 # TODO:
 ### Run the docker image with a few samples and a test repo
 

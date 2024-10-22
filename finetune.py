@@ -15,7 +15,7 @@ print(f"GPU available: {torch.cuda.is_available()}")
 
 token = os.environ["HF_TOKEN"]
 
-n_samples = os.environ["N_SAMPLES"] # set to -1 if you want to use all samples
+n_samples = int(os.environ["N_SAMPLES"]) # set to -1 if you want to use all samples
 
 # e.g. "meta-llama/Llama-3.2-1B-Instruct"
 # AI-Sweden-Models/Llama-3-8B-instruct is the llama model with the best rank
