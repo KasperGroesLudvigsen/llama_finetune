@@ -1,0 +1,4 @@
+{'train_runtime': 7711.9041, 'train_samples_per_second': 2.798, 'train_steps_per_second': 0.35, 'train_loss': 0.9214929213251689, 'epoch': 1.0}
+[codecarbon INFO @ 21:31:34] Energy consumed for all GPUs : 0.625855 kWh. Total GPU Power : 82.8216447468557 W
+[codecarbon INFO @ 21:31:34] Energy consumed for all CPUs : 0.091042 kWh. Total CPU Power : 42.5 W
+[codecarbon INFO @ 21:31:34] 1.121123 kWh of electricity used since the beginning.
