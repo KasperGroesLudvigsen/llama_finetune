@@ -2,3 +2,4 @@
 [codecarbon INFO @ 21:31:34] Energy consumed for all GPUs : 0.625855 kWh. Total GPU Power : 82.8216447468557 W
 [codecarbon INFO @ 21:31:34] Energy consumed for all CPUs : 0.091042 kWh. Total CPU Power : 42.5 W
 [codecarbon INFO @ 21:31:34] 1.121123 kWh of electricity used since the beginning.
+We ended up using 65.62 GB GPU memory (82.92%), of which 49.89 GB (63.04%) was used for LoRa.
