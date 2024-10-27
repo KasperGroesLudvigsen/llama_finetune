@@ -1,0 +1,1568 @@
+[
+    {
+        "dataset": "angry-tweets",
+        "task": "sentiment-classification",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.5184707385073467,
+                        "macro_f1": 0.6679957645105746
+                    },
+                    {
+                        "mcc": 0.5332368057632823,
+                        "macro_f1": 0.6677638417696129
+                    },
+                    {
+                        "mcc": 0.5136245359141334,
+                        "macro_f1": 0.6696546017286815
+                    },
+                    {
+                        "mcc": 0.509936563354307,
+                        "macro_f1": 0.6603766983162923
+                    },
+                    {
+                        "mcc": 0.5481813783107395,
+                        "macro_f1": 0.696000267065509
+                    },
+                    {
+                        "mcc": 0.5619295910123131,
+                        "macro_f1": 0.6997646049622124
+                    },
+                    {
+                        "mcc": 0.5249631251196811,
+                        "macro_f1": 0.6600191396984878
+                    },
+                    {
+                        "mcc": 0.530552042705224,
+                        "macro_f1": 0.6631966558979637
+                    },
+                    {
+                        "mcc": 0.46553855284916823,
+                        "macro_f1": 0.5959032466152633
+                    },
+                    {
+                        "mcc": 0.4958317775325244,
+                        "macro_f1": 0.6465772250571682
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 52.02265111068719,
+                "test_mcc_se": 1.67301420422098,
+                "test_macro_f1": 66.27252045621765,
+                "test_macro_f1_se": 1.7675440422275706
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "dansk",
+        "task": "named-entity-recognition",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "micro_f1_no_misc": 0.5799903334944416,
+                        "micro_f1": 0.30550529852675107
+                    },
+                    {
+                        "micro_f1_no_misc": 0.4573705179282868,
+                        "micro_f1": 0.23663810689514483
+                    },
+                    {
+                        "micro_f1_no_misc": 0.40209508460918614,
+                        "micro_f1": 0.19987934848180172
+                    },
+                    {
+                        "micro_f1_no_misc": 0.498067840274796,
+                        "micro_f1": 0.22386895475819035
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5826001955034212,
+                        "micro_f1": 0.2754098360655738
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5693430656934306,
+                        "micro_f1": 0.2647610121836926
+                    },
+                    {
+                        "micro_f1_no_misc": 0.4892812105926861,
+                        "micro_f1": 0.22568553955415271
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5227177990829512,
+                        "micro_f1": 0.29519610118356926
+                    },
+                    {
+                        "micro_f1_no_misc": 0.46493837654058645,
+                        "micro_f1": 0.25406551967947205
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5701624815361891,
+                        "micro_f1": 0.2779179087365283
+                    }
+                ]
+            },
+            "total": {
+                "test_micro_f1_no_misc": 51.365669052559745,
+                "test_micro_f1_no_misc_se": 3.829342393679035,
+                "test_micro_f1": 25.589276260648763,
+                "test_micro_f1_se": 2.1069781159123466
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8320,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "scala-da",
+        "task": "linguistic-acceptability",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.13964896768511326,
+                        "macro_f1": 0.4050693685689698
+                    },
+                    {
+                        "mcc": 0.1499919623383007,
+                        "macro_f1": 0.4975951710141911
+                    },
+                    {
+                        "mcc": 0.23969023837551093,
+                        "macro_f1": 0.6197524669077719
+                    },
+                    {
+                        "mcc": 0.1997907528291508,
+                        "macro_f1": 0.5468871237640577
+                    },
+                    {
+                        "mcc": 0.15936994626060677,
+                        "macro_f1": 0.5481036280434582
+                    },
+                    {
+                        "mcc": 0.19521600080464485,
+                        "macro_f1": 0.5782537067545305
+                    },
+                    {
+                        "mcc": 0.17839154509749688,
+                        "macro_f1": 0.465764160224877
+                    },
+                    {
+                        "mcc": 0.23674444380531495,
+                        "macro_f1": 0.5545028932794456
+                    },
+                    {
+                        "mcc": 0.130557378033124,
+                        "macro_f1": 0.4320518359039449
+                    },
+                    {
+                        "mcc": 0.22054084621718514,
+                        "macro_f1": 0.5698846931886267
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 18.499420814464482,
+                "test_mcc_se": 2.4620910957393303,
+                "test_macro_f1": 52.17865047649873,
+                "test_macro_f1_se": 4.278771174980301
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "scandiqa-da",
+        "task": "reading-comprehension",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "em": 51.7428350116189,
+                        "f1": 61.406561851952944
+                    },
+                    {
+                        "em": 55.968992248062015,
+                        "f1": 63.853849348793666
+                    },
+                    {
+                        "em": 52.936630602782074,
+                        "f1": 62.283343201263925
+                    },
+                    {
+                        "em": 50.07788161993769,
+                        "f1": 61.19203918269331
+                    },
+                    {
+                        "em": 53.204633204633204,
+                        "f1": 63.03484777770486
+                    },
+                    {
+                        "em": 49.65304548959136,
+                        "f1": 60.85574281796322
+                    },
+                    {
+                        "em": 53.53075170842825,
+                        "f1": 62.11281069060598
+                    },
+                    {
+                        "em": 51.04732350659426,
+                        "f1": 61.08039217357879
+                    },
+                    {
+                        "em": 54.11764705882353,
+                        "f1": 62.2211544446838
+                    },
+                    {
+                        "em": 52.09627329192546,
+                        "f1": 62.806307305530844
+                    }
+                ]
+            },
+            "total": {
+                "test_em": 52.437601374239684,
+                "test_em_se": 1.1900664774077505,
+                "test_f1": 62.08470487947712,
+                "test_f1_se": 0.5983599306487652
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8224,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "nordjylland-news",
+        "task": "summarization",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "bertscore": 0.669816038251156,
+                        "rouge_l": 0.2173166505142002
+                    },
+                    {
+                        "bertscore": 0.6715888144826749,
+                        "rouge_l": 0.2245842152450252
+                    },
+                    {
+                        "bertscore": 0.639368471558555,
+                        "rouge_l": 0.20413198783281256
+                    },
+                    {
+                        "bertscore": 0.6699016774946358,
+                        "rouge_l": 0.22083904345670727
+                    },
+                    {
+                        "bertscore": 0.6335730952268932,
+                        "rouge_l": 0.18587823012542173
+                    },
+                    {
+                        "bertscore": 0.6682230423029978,
+                        "rouge_l": 0.21309382709570962
+                    },
+                    {
+                        "bertscore": 0.6690013941406505,
+                        "rouge_l": 0.2150999992927722
+                    },
+                    {
+                        "bertscore": 0.6684635696728947,
+                        "rouge_l": 0.21707413950146887
+                    },
+                    {
+                        "bertscore": 0.6614573605911573,
+                        "rouge_l": 0.20112701510678455
+                    },
+                    {
+                        "bertscore": 0.6661325375753222,
+                        "rouge_l": 0.21097765373762356
+                    }
+                ]
+            },
+            "total": {
+                "test_bertscore": 66.17526001296937,
+                "test_bertscore_se": 0.8473285218049452,
+                "test_rouge_l": 21.101227619085254,
+                "test_rouge_l_se": 0.7021661106099834
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8448,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "danske-talemaader",
+        "task": "knowledge",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.41780716959842024,
+                        "accuracy": 0.556640625
+                    },
+                    {
+                        "mcc": 0.41852714960361687,
+                        "accuracy": 0.5546875
+                    },
+                    {
+                        "mcc": 0.3912882072468906,
+                        "accuracy": 0.5380859375
+                    },
+                    {
+                        "mcc": 0.41102740827108575,
+                        "accuracy": 0.5556640625
+                    },
+                    {
+                        "mcc": 0.38863685684932764,
+                        "accuracy": 0.5341796875
+                    },
+                    {
+                        "mcc": 0.43182528857328034,
+                        "accuracy": 0.5703125
+                    },
+                    {
+                        "mcc": 0.4399543066514609,
+                        "accuracy": 0.572265625
+                    },
+                    {
+                        "mcc": 0.4195925180495246,
+                        "accuracy": 0.560546875
+                    },
+                    {
+                        "mcc": 0.3901253719943335,
+                        "accuracy": 0.5361328125
+                    },
+                    {
+                        "mcc": 0.4264675562506547,
+                        "accuracy": 0.56640625
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 41.35251833088594,
+                "test_mcc_se": 1.1219023189164776,
+                "test_accuracy": 55.44921874999999,
+                "test_accuracy_se": 0.8691145926969096
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "danish-citizen-tests",
+        "task": "knowledge",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.5284380115281809,
+                        "accuracy": 0.681640625
+                    },
+                    {
+                        "mcc": 0.5050169057281477,
+                        "accuracy": 0.66796875
+                    },
+                    {
+                        "mcc": 0.5355531954319913,
+                        "accuracy": 0.6875
+                    },
+                    {
+                        "mcc": 0.5223241200295258,
+                        "accuracy": 0.6796875
+                    },
+                    {
+                        "mcc": 0.47758233323104565,
+                        "accuracy": 0.650390625
+                    },
+                    {
+                        "mcc": 0.5383439687521514,
+                        "accuracy": 0.693359375
+                    },
+                    {
+                        "mcc": 0.5732457577402537,
+                        "accuracy": 0.71484375
+                    },
+                    {
+                        "mcc": 0.5199737748554207,
+                        "accuracy": 0.6796875
+                    },
+                    {
+                        "mcc": 0.5166038399356004,
+                        "accuracy": 0.67578125
+                    },
+                    {
+                        "mcc": 0.5067678386092972,
+                        "accuracy": 0.669921875
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 52.23849745841614,
+                "test_mcc_se": 1.5520772610806033,
+                "test_accuracy": 68.0078125,
+                "test_accuracy_se": 1.0519413837820024
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "hellaswag-da",
+        "task": "common-sense-reasoning",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.3639091287007454,
+                        "accuracy": 0.5224609375
+                    },
+                    {
+                        "mcc": 0.387467636298574,
+                        "accuracy": 0.54052734375
+                    },
+                    {
+                        "mcc": 0.36445995022282335,
+                        "accuracy": 0.52392578125
+                    },
+                    {
+                        "mcc": 0.36805710904758987,
+                        "accuracy": 0.52587890625
+                    },
+                    {
+                        "mcc": 0.3804143497056206,
+                        "accuracy": 0.53515625
+                    },
+                    {
+                        "mcc": 0.36030133163332995,
+                        "accuracy": 0.52001953125
+                    },
+                    {
+                        "mcc": 0.3844231258443388,
+                        "accuracy": 0.53857421875
+                    },
+                    {
+                        "mcc": 0.39720828910230804,
+                        "accuracy": 0.54736328125
+                    },
+                    {
+                        "mcc": 0.3912360736173816,
+                        "accuracy": 0.54345703125
+                    },
+                    {
+                        "mcc": 0.37049951249423135,
+                        "accuracy": 0.52880859375
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 37.679765066669425,
+                "test_mcc_se": 0.8045990852383786,
+                "test_accuracy": 53.26171875,
+                "test_accuracy_se": 0.5976317680624773
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "speed",
+        "task": "speed",
+        "dataset_languages": [
+            "ab",
+            "aa",
+            "af",
+            "sq",
+            "am",
+            "ar",
+            "an",
+            "hy",
+            "as",
+            "av",
+            "ae",
+            "ay",
+            "az",
+            "bm",
+            "ba",
+            "eu",
+            "be",
+            "bn",
+            "bi",
+            "bs",
+            "br",
+            "bg",
+            "my",
+            "ca",
+            "ch",
+            "ce",
+            "ny",
+            "zh",
+            "cu",
+            "cv",
+            "kw",
+            "co",
+            "cr",
+            "hr",
+            "cs",
+            "da",
+            "dv",
+            "nl",
+            "dz",
+            "en",
+            "eo",
+            "et",
+            "ee",
+            "fo",
+            "fj",
+            "fi",
+            "fr",
+            "fy",
+            "ff",
+            "gd",
+            "gl",
+            "lg",
+            "ka",
+            "de",
+            "el",
+            "kl",
+            "gn",
+            "gu",
+            "ht",
+            "ha",
+            "he",
+            "hz",
+            "hi",
+            "ho",
+            "hu",
+            "is",
+            "io",
+            "ig",
+            "id",
+            "ia",
+            "ie",
+            "iu",
+            "ik",
+            "ga",
+            "it",
+            "ja",
+            "kn",
+            "kr",
+            "ks",
+            "kk",
+            "km",
+            "ki",
+            "rw",
+            "ky",
+            "kv",
+            "kg",
+            "ko",
+            "kj",
+            "ku",
+            "lo",
+            "la",
+            "lv",
+            "li",
+            "ln",
+            "lt",
+            "lu",
+            "lb",
+            "mk",
+            "mg",
+            "ms",
+            "ml",
+            "mt",
+            "gv",
+            "mi",
+            "mr",
+            "mh",
+            "mn",
+            "na",
+            "nv",
+            "nd",
+            "nr",
+            "ng",
+            "ne",
+            "no",
+            "nb",
+            "nn",
+            "ii",
+            "oc",
+            "oj",
+            "or",
+            "om",
+            "os",
+            "pi",
+            "ps",
+            "fa",
+            "pl",
+            "pt",
+            "pa",
+            "qu",
+            "ro",
+            "rm",
+            "rn",
+            "ru",
+            "se",
+            "sm",
+            "sg",
+            "sa",
+            "sc",
+            "sr",
+            "sn",
+            "sd",
+            "si",
+            "sk",
+            "sl",
+            "so",
+            "st",
+            "es",
+            "su",
+            "sw",
+            "ss",
+            "sv",
+            "tl",
+            "ty",
+            "tg",
+            "ta",
+            "tt",
+            "te",
+            "th",
+            "bo",
+            "ti",
+            "to",
+            "ts",
+            "tn",
+            "tr",
+            "tk",
+            "tw",
+            "ug",
+            "uk",
+            "ur",
+            "uz",
+            "ve",
+            "vi",
+            "vo",
+            "wa",
+            "cy",
+            "wo",
+            "xh",
+            "yi",
+            "yo",
+            "za",
+            "zu"
+        ],
+        "model": "CohereForAI/aya-expanse-8b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "test_speed": 2168.44,
+                        "test_speed_short": 296.12
+                    },
+                    {
+                        "test_speed": 3874.7799999999997,
+                        "test_speed_short": 522.8
+                    },
+                    {
+                        "test_speed": 4700.16,
+                        "test_speed_short": 955.6999999999999
+                    },
+                    {
+                        "test_speed": 6132.280000000001,
+                        "test_speed_short": 1188.6299999999999
+                    },
+                    {
+                        "test_speed": 6373.2,
+                        "test_speed_short": 1313.2
+                    },
+                    {
+                        "test_speed": 7111.04,
+                        "test_speed_short": 1825.5800000000002
+                    },
+                    {
+                        "test_speed": 7735.68,
+                        "test_speed_short": 2001.1299999999999
+                    },
+                    {
+                        "test_speed": 8346.32,
+                        "test_speed_short": 2197.88
+                    },
+                    {
+                        "test_speed": 8314.880000000001,
+                        "test_speed_short": 2386.63
+                    },
+                    {
+                        "test_speed": 8659.199999999999,
+                        "test_speed_short": 2589.4
+                    }
+                ]
+            },
+            "total": {
+                "test_speed": 6341.598,
+                "test_speed_se": 1339.876715978997,
+                "test_speed_short": 1527.707,
+                "test_speed_short_se": 490.729158830796
+            }
+        },
+        "num_model_parameters": 8028033024,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "angry-tweets",
+        "task": "sentiment-classification",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.550739651578351,
+                        "macro_f1": 0.6937341958454922
+                    },
+                    {
+                        "mcc": 0.5592335509989161,
+                        "macro_f1": 0.6928691114239345
+                    },
+                    {
+                        "mcc": 0.5795910100277558,
+                        "macro_f1": 0.7210187506584175
+                    },
+                    {
+                        "mcc": 0.5544155965121577,
+                        "macro_f1": 0.6975815813434307
+                    },
+                    {
+                        "mcc": 0.5627459350196324,
+                        "macro_f1": 0.7011979604082371
+                    },
+                    {
+                        "mcc": 0.5779243378666301,
+                        "macro_f1": 0.7155890249764215
+                    },
+                    {
+                        "mcc": 0.5793943965946543,
+                        "macro_f1": 0.7049626581976242
+                    },
+                    {
+                        "mcc": 0.5464403722672116,
+                        "macro_f1": 0.6613892426579002
+                    },
+                    {
+                        "mcc": 0.5790197695251713,
+                        "macro_f1": 0.7120874019649576
+                    },
+                    {
+                        "mcc": 0.5497976815782402,
+                        "macro_f1": 0.682484781513993
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 56.393023019687206,
+                "test_mcc_se": 0.8522268784800228,
+                "test_macro_f1": 69.82914708990407,
+                "test_macro_f1_se": 1.0777654312545752
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "dansk",
+        "task": "named-entity-recognition",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "micro_f1_no_misc": 0.6502095947834188,
+                        "micro_f1": 0.43341553637484587
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5958527295810411,
+                        "micro_f1": 0.43728018757327086
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5117289313640313,
+                        "micro_f1": 0.3550869193502423
+                    },
+                    {
+                        "micro_f1_no_misc": 0.6422018348623854,
+                        "micro_f1": 0.4118476727785613
+                    },
+                    {
+                        "micro_f1_no_misc": 0.6257283729269385,
+                        "micro_f1": 0.4024289263041679
+                    },
+                    {
+                        "micro_f1_no_misc": 0.6816059757236228,
+                        "micro_f1": 0.45161290322580644
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5535858178887993,
+                        "micro_f1": 0.346487962273517
+                    },
+                    {
+                        "micro_f1_no_misc": 0.6540934419202743,
+                        "micro_f1": 0.43101482326111745
+                    },
+                    {
+                        "micro_f1_no_misc": 0.6002716161158895,
+                        "micro_f1": 0.43205128205128207
+                    },
+                    {
+                        "micro_f1_no_misc": 0.5997334517992003,
+                        "micro_f1": 0.39497206703910615
+                    }
+                ]
+            },
+            "total": {
+                "test_micro_f1_no_misc": 61.15011766965601,
+                "test_micro_f1_no_misc_se": 3.1462063606859267,
+                "test_micro_f1": 40.96198280231917,
+                "test_micro_f1_se": 2.1948855029981384
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8320,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "scala-da",
+        "task": "linguistic-acceptability",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.3774114381456481,
+                        "macro_f1": 0.6676666472137085
+                    },
+                    {
+                        "mcc": 0.37567817444669904,
+                        "macro_f1": 0.6796130986668736
+                    },
+                    {
+                        "mcc": 0.4045784988666319,
+                        "macro_f1": 0.691437526898076
+                    },
+                    {
+                        "mcc": 0.3813209226022132,
+                        "macro_f1": 0.6823769165135904
+                    },
+                    {
+                        "mcc": 0.3186138812659614,
+                        "macro_f1": 0.6388565709146112
+                    },
+                    {
+                        "mcc": 0.3945177358329048,
+                        "macro_f1": 0.6919741210132607
+                    },
+                    {
+                        "mcc": 0.3637828952926766,
+                        "macro_f1": 0.6357623434739981
+                    },
+                    {
+                        "mcc": 0.40618279753192976,
+                        "macro_f1": 0.70267131242741
+                    },
+                    {
+                        "mcc": 0.36262090932768615,
+                        "macro_f1": 0.6511583757602134
+                    },
+                    {
+                        "mcc": 0.3905777309119322,
+                        "macro_f1": 0.694587639627731
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 37.75284984224283,
+                "test_mcc_se": 1.5885028292400456,
+                "test_macro_f1": 67.36104552509474,
+                "test_macro_f1_se": 1.4944382323737466
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "scandiqa-da",
+        "task": "reading-comprehension",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "em": 54.6862896979086,
+                        "f1": 63.87511314990903
+                    },
+                    {
+                        "em": 60.0,
+                        "f1": 66.44821355714862
+                    },
+                    {
+                        "em": 58.34621329211747,
+                        "f1": 66.26433742780438
+                    },
+                    {
+                        "em": 55.45171339563863,
+                        "f1": 65.55055830035205
+                    },
+                    {
+                        "em": 59.45945945945946,
+                        "f1": 66.78519617571203
+                    },
+                    {
+                        "em": 55.66692367000771,
+                        "f1": 63.93712338671046
+                    },
+                    {
+                        "em": 59.757023538344725,
+                        "f1": 66.29748546513814
+                    },
+                    {
+                        "em": 59.73622963537626,
+                        "f1": 66.84195943699427
+                    },
+                    {
+                        "em": 59.13725490196079,
+                        "f1": 66.42987861811386
+                    },
+                    {
+                        "em": 58.69565217391305,
+                        "f1": 66.2405060838564
+                    }
+                ]
+            },
+            "total": {
+                "test_em": 58.09367597647266,
+                "test_em_se": 1.2560106089820373,
+                "test_f1": 65.86703716017392,
+                "test_f1_se": 0.6765437970353189
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8224,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "nordjylland-news",
+        "task": "summarization",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "bertscore": 0.6819774847681401,
+                        "rouge_l": 0.23979752068164994
+                    },
+                    {
+                        "bertscore": 0.6834043916896917,
+                        "rouge_l": 0.24726260283829063
+                    },
+                    {
+                        "bertscore": 0.6514953300793422,
+                        "rouge_l": 0.22500362869555263
+                    },
+                    {
+                        "bertscore": 0.6861067005520454,
+                        "rouge_l": 0.24987755585800364
+                    },
+                    {
+                        "bertscore": 0.6415311851014849,
+                        "rouge_l": 0.20084544271044297
+                    },
+                    {
+                        "bertscore": 0.6833887189714005,
+                        "rouge_l": 0.24351679843823637
+                    },
+                    {
+                        "bertscore": 0.6831773575104307,
+                        "rouge_l": 0.24307646609025685
+                    },
+                    {
+                        "bertscore": 0.6852605931781,
+                        "rouge_l": 0.24308060586493907
+                    },
+                    {
+                        "bertscore": 0.6808077077730559,
+                        "rouge_l": 0.23406317515993924
+                    },
+                    {
+                        "bertscore": 0.6823581127973739,
+                        "rouge_l": 0.23832750463601665
+                    }
+                ]
+            },
+            "total": {
+                "test_bertscore": 67.59507582421065,
+                "test_bertscore_se": 0.9770906139371104,
+                "test_rouge_l": 23.64851300973328,
+                "test_rouge_l_se": 0.8896245200666768
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8448,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "danske-talemaader",
+        "task": "knowledge",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.6588921895172084,
+                        "accuracy": 0.7412109375
+                    },
+                    {
+                        "mcc": 0.662629834397691,
+                        "accuracy": 0.744140625
+                    },
+                    {
+                        "mcc": 0.6586217042692106,
+                        "accuracy": 0.7421875
+                    },
+                    {
+                        "mcc": 0.6278037406460693,
+                        "accuracy": 0.71875
+                    },
+                    {
+                        "mcc": 0.6725641979462537,
+                        "accuracy": 0.7490234375
+                    },
+                    {
+                        "mcc": 0.6954686375373209,
+                        "accuracy": 0.76953125
+                    },
+                    {
+                        "mcc": 0.6376026041948465,
+                        "accuracy": 0.7265625
+                    },
+                    {
+                        "mcc": 0.6541184897028299,
+                        "accuracy": 0.73828125
+                    },
+                    {
+                        "mcc": 0.6700231062545792,
+                        "accuracy": 0.7490234375
+                    },
+                    {
+                        "mcc": 0.6752394426663887,
+                        "accuracy": 0.7548828125
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 66.12963947132397,
+                "test_mcc_se": 1.1894718417774748,
+                "test_accuracy": 74.3359375,
+                "test_accuracy_se": 0.8770408058276452
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "danish-citizen-tests",
+        "task": "knowledge",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.7596927487439394,
+                        "accuracy": 0.83984375
+                    },
+                    {
+                        "mcc": 0.6964373111955477,
+                        "accuracy": 0.798828125
+                    },
+                    {
+                        "mcc": 0.7745205780705804,
+                        "accuracy": 0.849609375
+                    },
+                    {
+                        "mcc": 0.7481547195356397,
+                        "accuracy": 0.83203125
+                    },
+                    {
+                        "mcc": 0.6850227685435433,
+                        "accuracy": 0.791015625
+                    },
+                    {
+                        "mcc": 0.7569716630135677,
+                        "accuracy": 0.83984375
+                    },
+                    {
+                        "mcc": 0.7527150251593753,
+                        "accuracy": 0.8359375
+                    },
+                    {
+                        "mcc": 0.7466582678481238,
+                        "accuracy": 0.83203125
+                    },
+                    {
+                        "mcc": 0.7150726213132608,
+                        "accuracy": 0.810546875
+                    },
+                    {
+                        "mcc": 0.7315846891760063,
+                        "accuracy": 0.822265625
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 73.66830392599584,
+                "test_mcc_se": 1.8061315888363954,
+                "test_accuracy": 82.51953125,
+                "test_accuracy_se": 1.1905543971939927
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "hellaswag-da",
+        "task": "common-sense-reasoning",
+        "dataset_languages": [
+            "da"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "mcc": 0.6931808568976738,
+                        "accuracy": 0.76904296875
+                    },
+                    {
+                        "mcc": 0.6961541244324991,
+                        "accuracy": 0.7705078125
+                    },
+                    {
+                        "mcc": 0.6883562358538876,
+                        "accuracy": 0.76611328125
+                    },
+                    {
+                        "mcc": 0.7031279604287183,
+                        "accuracy": 0.7763671875
+                    },
+                    {
+                        "mcc": 0.7205249323951286,
+                        "accuracy": 0.78857421875
+                    },
+                    {
+                        "mcc": 0.6525453571209248,
+                        "accuracy": 0.73779296875
+                    },
+                    {
+                        "mcc": 0.6631087110456444,
+                        "accuracy": 0.74462890625
+                    },
+                    {
+                        "mcc": 0.6867062887608667,
+                        "accuracy": 0.76318359375
+                    },
+                    {
+                        "mcc": 0.7015329062953098,
+                        "accuracy": 0.77294921875
+                    },
+                    {
+                        "mcc": 0.7175428008296935,
+                        "accuracy": 0.78857421875
+                    }
+                ]
+            },
+            "total": {
+                "test_mcc": 69.22780174060347,
+                "test_mcc_se": 1.3279501525741395,
+                "test_accuracy": 76.77734375,
+                "test_accuracy_se": 1.0191571525239858
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    },
+    {
+        "dataset": "speed",
+        "task": "speed",
+        "dataset_languages": [
+            "ab",
+            "aa",
+            "af",
+            "sq",
+            "am",
+            "ar",
+            "an",
+            "hy",
+            "as",
+            "av",
+            "ae",
+            "ay",
+            "az",
+            "bm",
+            "ba",
+            "eu",
+            "be",
+            "bn",
+            "bi",
+            "bs",
+            "br",
+            "bg",
+            "my",
+            "ca",
+            "ch",
+            "ce",
+            "ny",
+            "zh",
+            "cu",
+            "cv",
+            "kw",
+            "co",
+            "cr",
+            "hr",
+            "cs",
+            "da",
+            "dv",
+            "nl",
+            "dz",
+            "en",
+            "eo",
+            "et",
+            "ee",
+            "fo",
+            "fj",
+            "fi",
+            "fr",
+            "fy",
+            "ff",
+            "gd",
+            "gl",
+            "lg",
+            "ka",
+            "de",
+            "el",
+            "kl",
+            "gn",
+            "gu",
+            "ht",
+            "ha",
+            "he",
+            "hz",
+            "hi",
+            "ho",
+            "hu",
+            "is",
+            "io",
+            "ig",
+            "id",
+            "ia",
+            "ie",
+            "iu",
+            "ik",
+            "ga",
+            "it",
+            "ja",
+            "kn",
+            "kr",
+            "ks",
+            "kk",
+            "km",
+            "ki",
+            "rw",
+            "ky",
+            "kv",
+            "kg",
+            "ko",
+            "kj",
+            "ku",
+            "lo",
+            "la",
+            "lv",
+            "li",
+            "ln",
+            "lt",
+            "lu",
+            "lb",
+            "mk",
+            "mg",
+            "ms",
+            "ml",
+            "mt",
+            "gv",
+            "mi",
+            "mr",
+            "mh",
+            "mn",
+            "na",
+            "nv",
+            "nd",
+            "nr",
+            "ng",
+            "ne",
+            "no",
+            "nb",
+            "nn",
+            "ii",
+            "oc",
+            "oj",
+            "or",
+            "om",
+            "os",
+            "pi",
+            "ps",
+            "fa",
+            "pl",
+            "pt",
+            "pa",
+            "qu",
+            "ro",
+            "rm",
+            "rn",
+            "ru",
+            "se",
+            "sm",
+            "sg",
+            "sa",
+            "sc",
+            "sr",
+            "sn",
+            "sd",
+            "si",
+            "sk",
+            "sl",
+            "so",
+            "st",
+            "es",
+            "su",
+            "sw",
+            "ss",
+            "sv",
+            "tl",
+            "ty",
+            "tg",
+            "ta",
+            "tt",
+            "te",
+            "th",
+            "bo",
+            "ti",
+            "to",
+            "ts",
+            "tn",
+            "tr",
+            "tk",
+            "tw",
+            "ug",
+            "uk",
+            "ur",
+            "uz",
+            "ve",
+            "vi",
+            "vo",
+            "wa",
+            "cy",
+            "wo",
+            "xh",
+            "yi",
+            "yo",
+            "za",
+            "zu"
+        ],
+        "model": "CohereForAI/aya-expanse-32b",
+        "results": {
+            "raw": {
+                "test": [
+                    {
+                        "test_speed": 1142.64,
+                        "test_speed_short": 148.28
+                    },
+                    {
+                        "test_speed": 1672.58,
+                        "test_speed_short": 265.59999999999997
+                    },
+                    {
+                        "test_speed": 1901.28,
+                        "test_speed_short": 500.84
+                    },
+                    {
+                        "test_speed": 2410.92,
+                        "test_speed_short": 615.23
+                    },
+                    {
+                        "test_speed": 2404.6400000000003,
+                        "test_speed_short": 722.4
+                    },
+                    {
+                        "test_speed": 2493.2,
+                        "test_speed_short": 933.88
+                    },
+                    {
+                        "test_speed": 2812.4,
+                        "test_speed_short": 1020.0699999999999
+                    },
+                    {
+                        "test_speed": 2714.72,
+                        "test_speed_short": 1129.76
+                    },
+                    {
+                        "test_speed": 2622.7599999999998,
+                        "test_speed_short": 1233.21
+                    },
+                    {
+                        "test_speed": 2706.0,
+                        "test_speed_short": 1336.5
+                    }
+                ]
+            },
+            "total": {
+                "test_speed": 2288.1139999999996,
+                "test_speed_se": 336.6308078017931,
+                "test_speed_short": 790.577,
+                "test_speed_short_se": 252.16400874360798
+            }
+        },
+        "num_model_parameters": 32296476672,
+        "max_sequence_length": 8193,
+        "vocabulary_size": 256000,
+        "generative": true,
+        "few_shot": true,
+        "validation_split": false,
+        "scandeval_version": "13.0.0"
+    }
+]

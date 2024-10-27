@@ -1,0 +1,11 @@
+Unsloth: Will use up to 358.41 out of 503.44 RAM for saving.0G [05:10<00:00, 41.2MB/s]
+100%|██████████| 80/80 [02:46<00:00,  2.08s/it]
+Unsloth: Saving tokenizer... Done.
+Unsloth: Saving model... This might take 5 minutes for Llama-7b...
+Done.
+We ended up using 62.52 GB GPU memory (79.00%), of which 23.83 GB (30.12%) was used for LoRa.
+{'train_runtime': 49122.8991, 'train_samples_per_second': 0.439, 'train_steps_per_second': 0.055, 'train_loss': 0.7930925272772565, 'epoch': 1.0}
+100%|██████████| 2697/2697 [13:38:42<00:00, 20.22s/it][codecarbon INFO @ 11:07:59] Energy consumed for RAM : 2.574882 kWh. RAM Power : 188.78840446472168 W
+[codecarbon INFO @ 11:07:59] Energy consumed for all GPUs : 4.045188 kWh. Total GPU Power : 270.22211938762564 W
+[codecarbon INFO @ 11:07:59] Energy consumed for all CPUs : 0.579916 kWh. Total CPU Power : 42.5 W
+[codecarbon INFO @ 11:07:59] 7.199986 kWh of electricity used since the beginning.

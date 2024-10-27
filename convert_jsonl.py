@@ -1,6 +1,6 @@
 import json
 
-filename = "scandeval_benchmark_results"
+filename = "scandeval_benchmark_results_expanse"
 # Input JSONL file path
 jsonl_file = f"{filename}.jsonl"
 
