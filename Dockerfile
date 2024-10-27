@@ -24,4 +24,4 @@ COPY . .
 
 #RUN python3 download_model.py
 
-CMD ["python", "./finetune.py"]
+CMD ["python", "./finetune_skolegpt_slimorca.py"]
