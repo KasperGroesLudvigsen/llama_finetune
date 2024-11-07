@@ -14,8 +14,8 @@ RUN pip install unsloth "xformers==0.0.28.post2" && \
     pip install --upgrade --no-cache-dir "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git" && \
     pip uninstall transformers -y && \
     pip install --upgrade --no-cache-dir "git+https://github.com/huggingface/transformers.git" && \
-    pip install codecarbon
-
+    pip install codecarbon && \
+    
 COPY . .
 
 # pass MODEL_PATH like this in docker build command: docker build --build-arg MY_BUILD_ARG=my_value -t my_image . 
@@ -24,4 +24,4 @@ COPY . .
 
 #RUN python3 download_model.py
 
-CMD ["python", "./finetune_skolegpt_slimorca.py"]
+CMD ["python", "./finetune_gemma.py"]
