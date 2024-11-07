@@ -31,7 +31,7 @@ print(f"Will push the trained model to: {repo}")
 
 print(f"Will fine tune this model: {hf_model_path}")
 
-max_seq_length = 8192 # If input sequence length exceeds max_seq_len it will be capped to max_seq_len Llama has context length of 8192
+max_seq_length = 2048 # If input sequence length exceeds max_seq_len it will be capped to max_seq_len Llama has context length of 8192
 dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = False # Whether to load the model in 4bit quantization. If True, uses 4bit quantization to reduce memory usage.
 
@@ -118,7 +118,7 @@ trainer = SFTTrainer(
     dataset_num_proc = 4, # Number of processes to use for processing the dataset. Only used when packing = False
     packing = False, # Can make training 5x faster for short sequences.
     args = TrainingArguments(
-        per_device_train_batch_size = 8,
+        per_device_train_batch_size = 4,
         gradient_accumulation_steps = 1,
         warmup_steps = 5,
         num_train_epochs = 1, # Set this for 1 full training run. OpenAI's default is 4 https://community.openai.com/t/how-many-epochs-for-fine-tunes/7027/5

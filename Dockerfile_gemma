@@ -14,7 +14,7 @@ RUN pip install unsloth "xformers==0.0.28.post2" && \
     pip install --upgrade --no-cache-dir "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git" && \
     pip uninstall transformers -y && \
     pip install --upgrade --no-cache-dir "git+https://github.com/huggingface/transformers.git" && \
-    pip install codecarbon && \
+    pip install codecarbon
     
 COPY . .
 
